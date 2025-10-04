@@ -1,0 +1,13 @@
+first fork the remote repo from the GUI 
+and then clone it to local, add the upstream for the cloned forked repo , this upstream is nothing but the remote source
+and merger it with main and push it to the forked repo from your local.
+
+
+git clone https://github.com/your-username/forked-repo.git
+cd forked-repo
+git remote add upstream https://github.com/original-owner/original-repo.git
+git remote -v
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
