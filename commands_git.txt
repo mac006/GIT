@@ -11,3 +11,34 @@ git fetch upstream
 git checkout main
 git merge upstream/main
 git push origin main
+
+
+if any changes are made directly in the github UI and want to pull it tonyou local repo
+
+git pull origin main
+to check to see what changed before pulling 
+git fetch origin
+git diff origin/main
+
+of we have made any local changes and havent committed git might prevent the pull
+you can stash your chnages as below
+
+git stash
+git pull origin main
+git stash pop
+or
+commit your local changes before pulling
+git add.
+git commit -m "your message"
+git pull origin main
+
+
+after doing any chages locall in order to oush to github
+we need to run atleast 3 command git add . git commit and git push
+so instaed create an alias as below and just run 1 command 
+
+git config --global alias.acp '!f() { git add . && git commit -m "$1" && git push; }; f'
+
+now we can use git acp "your commit message"
+once it asks for username and password after that it wont ask.
+cred will be stored in ~/.git-credentials file 
